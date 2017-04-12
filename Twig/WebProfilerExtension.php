@@ -67,7 +67,7 @@ class WebProfilerExtension extends \Twig_Extension_Profiler
     {
         $profilerDump = function (\Twig_Environment $env, $value, $maxDepth = 0) {
             if(is_array($value)){
-                $value = new Data($value);
+                $value = new Data([$value]);
             }else if(!$value instanceof Data){
                 $value = new Data([0=>[$value]]);
             }
